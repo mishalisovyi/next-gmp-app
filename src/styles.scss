@@ -1,0 +1,144 @@
+@use "./colors";
+@use "./mixins";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;900&display=swap");
+
+// Base styles
+
+body {
+  margin: 0;
+  background-color: colors.$stone-cold;
+}
+
+img {
+  @include mixins.typography-body;
+
+  color: colors.$white;
+}
+
+// Typography
+
+.typography {
+  &-button {
+    @include mixins.typography-button;
+  }
+
+  &-button-semibold {
+    @include mixins.typography-button-semibold;
+  }
+
+  &-body {
+    @include mixins.typography-body;
+  }
+
+  &-body-semibold {
+    @include mixins.typography-body-semibold;
+  }
+
+  &-heading {
+    @include mixins.typography-heading;
+  }
+}
+
+// Buttons
+
+.button {
+  @include mixins.typography-button;
+  @include mixins.button-basic;
+
+  &--small {
+    padding: 12px 18px;
+  }
+
+  &--primary {
+    color: colors.$white;
+    background-color: colors.$festive-fennec;
+  }
+
+  &--secondary {
+    color: colors.$festive-fennec;
+    background-color: colors.$young-night;
+    border: solid 1.5px colors.$festive-fennec;
+  }
+
+  &--tertiary {
+    @include mixins.typography-button-semibold;
+
+    color: colors.$festive-fennec;
+    background-color: colors.$stone-cold;
+  }
+
+  &--transparent {
+    padding: 0;
+    color: colors.$white;
+    background-color: unset;
+  }
+
+  &--menu {
+    border-radius: 50%;
+    color: colors.$white;
+    background-color: colors.$young-night;
+    padding: 8px 17px 6px;
+  }
+
+  &--search {
+    padding: 0;
+    border: none;
+    background-color: unset;
+    color: colors.$festive-fennec;
+    font-size: 36px;
+  }
+}
+
+// Forms
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+
+  &__label {
+    @include mixins.typography-button-small-semibold;
+
+    color: colors.$festive-fennec;
+  }
+
+  &__control {
+    @include mixins.typography-body;
+
+    padding: 8px 12px;
+    box-sizing: border-box;
+    background-color: colors.$black-panther;
+    border: solid 1px transparent;
+    border-radius: 4px;
+  }
+
+  &__control:not(textarea) {
+    height: 42px;
+  }
+
+  &__validation-message {
+    @include mixins.typography-subtitle-small;
+    @extend .u-hidden;
+
+    color: colors.$festive-fennec;
+    min-height: 16px;
+  }
+
+  &--has-error {
+    .form-group {
+      &__control {
+        border: solid 1px colors.$festive-fennec;
+      }
+
+      &__validation-message {
+        visibility: visible;
+      }
+    }
+  }
+}
+
+// Utility
+
+.u-hidden {
+  visibility: hidden;
+}

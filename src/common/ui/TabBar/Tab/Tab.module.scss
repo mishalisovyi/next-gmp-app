@@ -1,0 +1,16 @@
+@use '../../../../mixins';
+@use '../../../../colors';
+
+.Tab {
+  @include mixins.typography-button-small;
+
+  display: inline-block;
+  padding: 20px 0;
+  color: colors.$white;
+  z-index: 1;
+  cursor: pointer;
+
+  &--active, &:hover {
+    border-bottom: solid 4px colors.$festive-fennec;
+  }
+}

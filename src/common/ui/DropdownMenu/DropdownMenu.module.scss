@@ -1,0 +1,30 @@
+@use '../../../colors';
+@use '../../../mixins';
+
+.DropdownMenu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  padding: 12px 0;
+  background-color: colors.$young-night;
+  box-shadow: 0px 0px 10px colors.$black-panther;
+  transform: translateX(-100%);
+  z-index: 20;
+
+  &__close-button {
+    align-self: end;
+    margin: -10px 10px 4px 0;
+  }
+
+  &__item {
+    @include mixins.typography-menu;
+    padding: 8px 12px;
+    min-width: 180px;
+    color: colors.$white;
+    cursor: pointer;
+
+    &:hover {
+      background-color: colors.$festive-fennec;
+    }
+  }
+}

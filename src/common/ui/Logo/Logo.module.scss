@@ -1,0 +1,15 @@
+@use '../../../colors';
+@use '../../../mixins';
+
+.Logo {
+	font-size: 18px;
+	color: colors.$festive-fennec;
+}
+
+.Logo__bold-part {
+	@include mixins.font-montserrat-black;
+}
+
+.Logo__regular-part {
+	@include mixins.font-montserrat-medium;
+}

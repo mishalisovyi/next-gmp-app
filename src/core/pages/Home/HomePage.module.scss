@@ -1,0 +1,9 @@
+@use '../../../colors';
+@use '../../../mixins';
+
+.MoviesContainer {
+  @include mixins.basic-page-offset;
+
+  padding-bottom: 56px;
+  background-color: colors.$young-night;
+}

@@ -1,0 +1,16 @@
+.MovieFormPopup {
+  &__form {
+    width: 855px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+
+    .form {
+      &__main-info {
+        display: grid;
+        grid-template-columns: 5fr 3fr;
+        gap: 14px;
+      }
+    }
+  }
+}

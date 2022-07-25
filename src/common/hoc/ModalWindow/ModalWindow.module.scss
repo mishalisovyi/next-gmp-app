@@ -1,0 +1,58 @@
+@use "../../../colors";
+@use "../../../mixins";
+
+.ModalWindow {
+  &__container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+  }
+
+  &__backdrop {
+    width: 100%;
+    height: 100%;
+    background-color: colors.$young-night;
+    opacity: 0.7;
+  }
+
+  &__window {
+    min-width: 550px;
+    min-height: 250px;
+    padding: 18px 56px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: colors.$young-night;
+    box-shadow: 0px 0px 10px colors.$black-panther;
+
+    .window {
+      &__close-button-wrapper {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+      }
+
+      &__title {
+        @include mixins.typography-heading;
+      }
+
+      &__body {
+        flex-grow: 1;
+      }
+
+      &__action-buttons {
+        display: flex;
+        justify-content: flex-end;
+        column-gap: 12px;
+        margin-top: 16px;
+      }
+    }
+  }
+}

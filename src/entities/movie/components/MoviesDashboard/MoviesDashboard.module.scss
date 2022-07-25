@@ -1,0 +1,14 @@
+@use '../../../../mixins';
+
+.MoviesDashboard {
+  &__items-number-title {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  &__items-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 56px;
+  }
+}

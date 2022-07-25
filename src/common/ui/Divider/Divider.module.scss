@@ -1,0 +1,8 @@
+@use "../../../colors";
+
+.Divider {
+  height: 4px;
+  position: relative;
+  top: -4px;
+  background-color: colors.$black-panther;
+}

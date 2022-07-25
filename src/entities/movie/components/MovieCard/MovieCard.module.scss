@@ -1,0 +1,46 @@
+@use '../../../../mixins';
+
+.MovieCard {
+  position: relative;
+  cursor: pointer;
+
+  &__menu {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 1;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    max-width: 320px;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .info {
+      &__summary {
+        display: flex;
+        flex-direction: column;
+        row-gap: 8px;
+      }
+
+      &__title {
+        @include mixins.typography-subtitle;
+
+        opacity: .7;
+      }
+
+      &__tagline {
+        @include mixins.typography-subtitle-small;
+
+        opacity: .5;
+      }
+    }
+  }
+}

@@ -1,0 +1,151 @@
+@use "./colors";
+
+// PRIVATE
+
+@mixin -font-montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+
+@mixin -font-weight($value) {
+  font-weight: $value;
+}
+
+@mixin -typography-button-basic {
+  text-transform: uppercase;
+}
+
+@mixin -typography-body-basic {
+  font-size: 18px;
+  color: colors.$white;
+}
+
+@mixin -typography-body-large {
+  font-size: 22px;
+  color: colors.$white;
+}
+
+@mixin -typography-subtitle-basic {
+  @include font-montserrat-medium;
+  color: colors.$white;
+}
+
+// PUBLIC
+
+// Fonts definitions
+
+@mixin font-montserrat-light {
+  @include -font-montserrat;
+  @include -font-weight(300);
+}
+
+@mixin font-montserrat-regular {
+  @include -font-montserrat;
+  @include -font-weight(400);
+}
+
+@mixin font-montserrat-medium {
+  @include -font-montserrat;
+  @include -font-weight(500);
+}
+
+@mixin font-montserrat-semibold {
+  @include -font-montserrat;
+  @include -font-weight(600);
+}
+
+@mixin font-montserrat-black {
+  @include -font-montserrat;
+  @include -font-weight(900);
+}
+
+// Typography
+
+@mixin typography-button {
+  @include -typography-button-basic;
+  @include font-montserrat-medium;
+  font-size: 18px;
+}
+
+@mixin typography-button-semibold {
+  @include -typography-button-basic;
+  @include font-montserrat-semibold;
+  font-size: 18px;
+}
+
+@mixin typography-button-small {
+  @include -typography-button-basic;
+  @include font-montserrat-medium;
+  font-size: 14px;
+}
+
+@mixin typography-button-small-lightened {
+  @include -typography-button-basic;
+  @include font-montserrat-regular;
+  font-size: 14px;
+}
+
+@mixin typography-button-small-semibold {
+  @include -typography-button-basic;
+  @include font-montserrat-semibold;
+  font-size: 14px;
+}
+
+@mixin typography-body {
+  @include -typography-body-basic;
+  @include font-montserrat-regular;
+}
+
+@mixin typography-body-large {
+  @include -typography-body-large;
+  @include font-montserrat-light;
+}
+
+@mixin typography-body-semibold {
+  @include -typography-body-basic;
+  @include font-montserrat-semibold;
+}
+
+@mixin typography-subtitle {
+  @include -typography-subtitle-basic;
+  font-size: 16px;
+}
+
+@mixin typography-subtitle-small {
+  @include -typography-subtitle-basic;
+  font-size: 12px;
+}
+
+@mixin typography-menu {
+  @include font-montserrat-medium;
+  font-size: 14px;
+}
+
+@mixin typography-heading {
+  @include font-montserrat-light;
+
+  color: colors.$white;
+  font-size: 32px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0 0 36px;
+}
+
+// Offsets
+
+@mixin basic-page-offset {
+  padding-left: 56px;
+  padding-right: 56px;
+}
+
+// Buttons
+
+@mixin button-basic {
+  padding: 18px 36px;
+  border: none;
+  border-radius: 4px;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+}

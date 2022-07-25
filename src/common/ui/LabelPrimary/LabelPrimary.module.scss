@@ -1,0 +1,15 @@
+@use '../../../mixins';
+@use '../../../colors';
+
+.LabelPrimary {
+  @include mixins.typography-body;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  color: colors.$white;
+  border: solid 1px colors.$white;
+  border-radius: 50%;
+}

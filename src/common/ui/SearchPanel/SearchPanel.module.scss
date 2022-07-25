@@ -1,0 +1,7 @@
+.SearchPanel {
+  &__controls {
+    display: grid;
+    grid-template-columns: 7fr 2fr;
+    column-gap: 14px;
+  }
+}

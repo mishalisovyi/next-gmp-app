@@ -1,0 +1,29 @@
+@use '../../../colors';
+@use '../../../mixins';
+
+.FilterSelectList {
+  display: flex;
+  align-items: center;
+  column-gap: 32px;
+
+  &__label {
+    @include mixins.typography-button-small-lightened;
+
+    color: rgba(colors.$white, .6);
+  }
+
+  &__control, &__control:focus {
+    @include mixins.typography-button-small;
+
+    color: colors.$white;
+    background-color: colors.$transparent;
+    border: none;
+    cursor: pointer;
+
+    .control {
+      &__option {
+        background-color: colors.$young-night;
+      }
+    }
+  }
+}

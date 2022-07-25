@@ -1,0 +1,60 @@
+@use '../../../../mixins';
+@use '../../../../colors';
+
+.MovieDetails {
+  display: flex;
+  column-gap: 56px;
+
+  &__poster {
+    min-width: 320px;
+  }
+
+  &__main-block {
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+
+    .main-block {
+      &__header {
+        display: flex;
+        align-items: center;
+        column-gap: 24px;
+        position: relative;
+      }
+
+      &__title {
+        @include mixins.typography-heading;
+
+        margin: 0;
+      }
+
+      &__tagline {
+        @include mixins.typography-subtitle-small;
+
+        position: absolute;
+        bottom: -18px;
+        left: 0;
+        opacity: .5;
+      }
+
+      &__secondary-info {
+        display: flex;
+        column-gap: 48px;
+        margin-top: 18px
+      }
+
+      &__secondary-info-item {
+        @include mixins.typography-body-large;
+
+        color: colors.$festive-fennec;
+      }
+
+      &__overview {
+        @include mixins.typography-body;
+
+        margin: 0;
+        opacity: .5;
+      }
+    }
+  }
+}

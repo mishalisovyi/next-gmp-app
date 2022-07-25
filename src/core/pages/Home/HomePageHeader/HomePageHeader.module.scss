@@ -1,0 +1,29 @@
+@use "../../../../colors";
+@use "../../../../mixins";
+
+.HomePageHeader {
+  @include mixins.basic-page-offset;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+  margin-bottom: 10px;
+  padding-top: 16px;
+  padding-bottom: 28px;
+  background-color: colors.$young-night;
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__body {
+    flex-grow: 1;
+    margin-top: 14px;
+
+    &--offset {
+      @include mixins.basic-page-offset;
+    }
+  }
+}
